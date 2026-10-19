@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">Ghost Detector EMI</string>
-    <string name="radar_title">EMF Radar Active</string>
-    <string name="entity_alert">ENTITY DETECTED!</string>
-    <string name="safe">Area Safe</string>
-</resources>

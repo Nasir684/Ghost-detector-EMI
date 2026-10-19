@@ -1,19 +1,46 @@
-# Var-Rho EMI Detector
+# 👻 Ghost Detector EMI - Paranormal EMF Detector
 
-Open-source Flutter implementation of **DOI 10.5281/zenodo.23434145**
+**WanaLab | Powered by Var-Rho Engine**
 
-Reproduces 262× suppression of swarm-global EMI using Var-Rho trigger.
+A scientific ghost hunting tool that detects paranormal electromagnetic fluctuations using your phone's magnetometer.
 
-## Science
-- Var threshold >1000, Rho >0.8
-- Swarm veto Δt=5ms, holdoff 50ms
-- Dead-time 0.10%, Sensitivity 96.3%
-- Seed 684 reproducible
+### 🔬 How It Works
+Unlike fake ghost apps, this uses real physics:
+- **EMF Measurement:** Reads magnetic field in µT (microtesla) from device sensor
+- **Var-Rho Engine:** Analyzes variance & rho stability over 25 readings
+- **Entity Logic:** Triggers only when EMF >65µT + High Variance = True anomaly
 
-## App Categories
-- Home Scanner (FREE)
-- Workshop Tool — mag+vib dual detection
-- Student Lab — Var vs Rho scatter + results.json export
-- Hidden Device Finder
+### ✨ Features
+- Real-time EMF meter (µT)
+- Ghost Radar with scanning animation
+- Var-Rho anomaly detection algorithm
+- Color-coded alerts: Green Safe / Orange Fluctuation / Red Entity
+- No camera trick, no fake sounds - pure sensor data
+- Works offline, no permissions needed
 
-## Build
+### 📊 Detection Levels
+- **0-50 µT:** ✅ Safe Zone - Normal background
+- **50-65 µT:** ⚠️ Fluctuation - Electrical interference or spirit nearby
+- **65+ µT + High Variance:** 👻 ENTITY DETECTED - Paranormal activity
+
+### 🛠️ Built With
+- Flutter 3.19
+- sensors_plus for magnetometer
+- Var-Rho Engine (from EMI Detector)
+
+### 📥 Download APK
+Go to Actions Tab → Download Artifact `ghost-detector-apk`
+
+### ⚠️ Disclaimer
+For entertainment and experimental use. EMF spikes can be caused by electronics, wiring, speakers. Use with critical thinking. WanaLab does not guarantee paranormal existence.
+
+### 👨‍💻 Developer
+**WanaLab** - Wana, Pakistan
+- EMI Detector series
+- Var-Rho Engine Creator
+
+### 📄 License
+MIT License - Free for learning and ghost hunting!
+
+---
+**Ghost hunting is science, not magic. We measure what others imagine.**

@@ -1,0 +1,51 @@
+package com.wanalab.ghostdetector;
+
+import android.hardware.*;
+import android.os.Bundle;
+import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+import java.util.ArrayList;
+
+public class MainActivity extends AppCompatActivity implements SensorEventListener {
+    SensorManager sm;
+    Sensor mag;
+    TextView emfText, statusText;
+    ArrayList<Float> history = new ArrayList<>();
+
+    @Override
+    protected void onCreate(Bundle b) {
+        super.onCreate(b);
+        setContentView(R.layout.activity_main);
+        sm = (SensorManager) getSystemService(SENSOR_SERVICE);
+        mag = sm.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD);
+        emfText = findViewById(R.id.emfValue);
+        statusText = findViewById(R.id.status);
+    }
+
+    @Override
+    public void onSensorChanged(SensorEvent e) {
+        float x = e.values[0], y = e.values[1], z = e.values[2];
+        float magVal = (float)Math.sqrt(x*x + y*y + z*z);
+        
+        history.add(magVal);
+        if(history.size() > 20) history.remove(0);
+        
+        float avg = 0; for(float v:history) avg+=v; avg/=history.size();
+        float variance = 0; for(float v:history) variance+=Math.pow(v-avg,2); variance/=history.size();
+
+        emfText.setText(String.format("%.1f µT", magVal));
+        
+        if(magVal > 65 && variance > 2) {
+            statusText.setText("👻 ENTITY DETECTED! " + magVal);
+        } else {
+            statusText.setText("Scanning... Safe");
+        }
+    }
+
+    @Override
+    protected void onResume() { super.onResume(); sm.registerListener(this, mag, SensorManager.SENSOR_DELAY_NORMAL); }
+    @Override
+    protected void onPause() { super.onPause(); sm.unregisterListener(this); }
+    @Override
+    public void onAccuracyChanged(Sensor s, int a) {}
+      }

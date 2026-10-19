@@ -1,5 +1,5 @@
 name: ghost_detector_emi
-description: Ghost Detector EMI - Paranormal EMF Detector by WanaLab using Var-Rho Engine.
+description: Ghost Detector EMI - Paranormal EMF Detector by WanaLab.
 publish_to: 'none'
 version: 1.0.0+1
 
@@ -9,7 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sensors_plus: ^5.0.1
+  sensors_plus: ^4.0.2
   cupertino_icons: ^1.0.2
 
 dev_dependencies:

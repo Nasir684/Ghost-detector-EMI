@@ -1,41 +1,42 @@
-# 👻 Ghost Detector - EMF Paranormal Finder
+# 👻 Ghost Detector - EMF Radar
 
-Real EMF-based ghost detection app for Android. Uses phone's magnetometer to detect magnetic anomalies claimed to indicate paranormal presence.
+Professional ghost hunting tool using real phone magnetometer sensor. Detects EMF anomalies like K2 Meter.
 
-Built on our proven **Var-Rho engine** from EMI Detector.
+> Built by WanaLab using Var-Rho engine - Same engine powering 5 sensor apps.
 
-### 🔬 How it Works
-- Measures magnetic field in µT (Mag)
-- Calculates Var (variance) and Rho (stability) over 20 samples
-- Flags anomalies:
-    - Mag > 60 µT + Var > 2 = Strong Entity
-    - Mag 40-60 = Spirit Nearby
-    - Mag < 20 = No Activity
+## 🎯 Why this app?
+Ghost hunters believe spirits disrupt EMF. This app measures magnetic field in µT and flags sudden spikes - same principle as Ghost Meter Pro devices ($50).
 
-Same sensor data as professional EMF meters (K2, Mel Meter).
+## 🔬 How it works (Real Sensor Data)
+Uses Android `SensorManager.TYPE_MAGNETIC_FIELD`
 
-### ✨ Features
-- [x] Real-time EMF radar with ghost animation
-- [x] Audio feedback + vibration on detection
-- [x] EVP Recorder (auto-record on spike)
-- [x] CSV export of Var-Rho logs
-- [x] No internet needed, 100% sensor based
+- Reads X,Y,Z magnetic field
+- Calculates `Mag = sqrt(x²+y²+z²)` in µT
+- Calculates `Var` (variance) and `Rho` (stability) over last 20 samples
+- From my real tests in Wana:
+    - Open ground = 5-15 µT = No Activity
+    - Near UPS/Motor = 60-75 µT = ENTITY DETECTED
 
-### 📱 Tech Stack
-- Android Studio - Java/Kotlin
-- SensorManager.MAGNETIC_FIELD
-- Var-Rho detection algorithm (proprietary)
+Check `/logs/` folder for real CSV logs from field tests.
 
-### ⚠️ Disclaimer
-For entertainment and paranormal research purposes. Not a scientific device. For Play Store: Informational use only.
+## 📱 Features
+- 👻 Radar UI - Black theme with sonar sweep
+- 📊 Real-time EMF graph (0-100 µT)
+- 🔊 Audio alert + vibration when Mag > 60 µT
+- 📼 EVP Recorder - Auto record on spike
+- 💾 Export CSV - Save ghost evidence
+- 🌙 Night mode + Flashlight
+- No ads spam, No internet needed
 
-### 📂 Related Repos
-- EMI Detector (base engine): [link your EMI repo here]
-- EMF Pollution Meter (coming soon)
+## 🚦 Detection Levels
+| Mag (µT) | Status | Meaning |
+|---|---|---|
+| 0-20 | SAFE | No activity |
+| 20-40 | FAINT | Possible presence |
+| 40-65 | SPIRIT NEARBY | Investigate |
+| 65+ | ENTITY DETECTED! | Strong anomaly |
 
-### 👨‍💻 Developer
-WanaLab - Wana, FATA, Pakistan
-Building low-cost sensor tools.
+## 📸 Screenshots
+Add 3 screenshots here before Play Store upload
 
-### 📄 License
-MIT - Free to use for learning.
+## 🛠️ Build
